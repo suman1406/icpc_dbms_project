@@ -5,6 +5,7 @@ const aluminiController = require('../controllers/aluminiController');
 const contestController = require('../controllers/contestController');
 const championController = require('../controllers/championController');
 const videoController = require('../controllers/videoController');
+const contributionController = require('../controllers/contributionController');
 const pool = require('../db'); // Import the database connection
 
 router.get('/', (req, res) => {
@@ -36,7 +37,7 @@ router.get('/contests', contestController.getContests);
 router.get('/champions', championController.getChampions);
 
 // Contribution routes
-router.get('/contributions', contestController.getContests);
+router.get('/contributions', contributionController.getContributions);
 
 // Video Controller
 router.get('/watch-video', videoController.getVideos)
