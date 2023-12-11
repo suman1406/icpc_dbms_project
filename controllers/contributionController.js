@@ -1,14 +1,14 @@
-const pool = require('../db'); // Import the database connection
+// Import the database connection
+const pool = require('../db');
 
-exports.getContributions = (req, res) => {
-    let q = 'SELECT * FROM contribution';
+// Get contributions
+exports.getContributions = async (req, res) => {
     try {
-        pool.query(q, (err, data) => {
-            if (err) throw err;
-            res.render('basic/contributions', { contributions: data });
-        });
-    } catch (err) {
-        console.log(err);
-        res.send('Some error in the database');
+        const query = 'SELECT * FROM contribution';
+        const [contributions, fields] = await pool.query(query);
+        res.render('basic/contributions', { contributions });
+    } catch (error) {
+        console.error('Error fetching contributions:', error);
+        res.status(500).send('Internal Server Error');
     }
 };
