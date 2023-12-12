@@ -67,7 +67,9 @@
     <div class="container">
         <% contributions.forEach((contribution)=> { %>
             <div class="card contribution-card text-bg-primary">
-                <div class="card-header">Header</div>
+                <div class="card-header"> ID:
+                    <%= contribution.contributionid %>
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">
                         <%= contribution.type %>
@@ -87,9 +89,7 @@
         <button class="btn btn-primary" onclick="window.location.href='/add-contribution'">Add Contribution</button>
         <button class="btn btn-danger" onclick="window.location.href='/delete-contribution'">Delete
             Contribution</button>
-        <button class="btn btn-warning" onclick="window.location.href='/update-contribution'">Update
-            Contribution</button>
-    </div>
+        </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

@@ -1,14 +1,11 @@
 const pool = require('../db'); // Import the database connection
 
-exports.getVideos = (req, res) => {
-    let q = 'SELECT * FROM video';
+exports.getVideos = async (req, res) => {
     try {
-        pool.query(q, (err, videos) => {
-            if (err) throw err;
-            res.render('basic/watch-videos.ejs', { videos });
-        });
-    } catch (err) {
-        console.log(err);
-        res.send('Some error in the database');
+        const [videos, fields] = await pool.query('SELECT * FROM video');
+        res.render('basic/watch-videos.ejs', { videos });
+    } catch (error) {
+        console.error('Error getting videos:', error);
+        res.status(500).send('Error getting videos');
     }
 };
