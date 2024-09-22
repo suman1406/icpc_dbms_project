@@ -88,6 +88,3 @@ Once the application is up and running, users can manage different aspects of th
 ## License
 
 This project is licensed under the MIT License.
-```
-
-You can copy this and customize it further as needed for your GitHub repository. Let me know if you need any changes!
