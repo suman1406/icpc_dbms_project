@@ -84,7 +84,3 @@ Once the application is up and running, users can manage different aspects of th
 - Suman Panigrahi (CB.EN.U4CSE22444)
 - Sravani Oruganti (CB.EN.U4CSE22457)
 - Soma Siva Pravallika (CB.EN.U4CSE22440)
-
-## License
-
-This project is licensed under the MIT License.
